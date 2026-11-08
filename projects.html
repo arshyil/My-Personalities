@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Arshyil</title>
+    <meta name="description" content="All projects by Muhammad Arshyil Azzim: web development, UI/UX and graphic design.">
+    <meta name="theme-color" content="#754ef9">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="All Projects | Arshyil">
+    <meta property="og:description" content="Search and filter all projects by Muhammad Arshyil Azzim.">
+    <meta property="og:url" content="https://arshyil.github.io/My-Personalities/projects.html">
+    <meta property="og:image" content="https://arshyil.github.io/My-Personalities/images/og-image.jpg">
+
+    <!-- box icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="projects-page">
+
+    <!-- header design -->
+    <header class="header sticky">
+        <a href="index.html" class="logo">My Personalities.</a>
+
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#services">Skills</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="index.html#contact">My Contact</a>
+        </nav>
+
+        <div class="bx bx-moon" id="darkMode-icon"></div>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+    </header>
+
+    <!-- all projects -->
+    <section class="portfolio pp" id="projects">
+        <a href="index.html#journey" class="pp-back"><i class='bx bx-left-arrow-alt'></i> Back to home</a>
+
+        <h1 class="heading">All <span>Projects</span></h1>
+        <p class="section-sub">Search by name or technology, or filter by category.</p>
+
+        <!-- toolbar -->
+        <div class="pp-toolbar">
+            <div class="pp-search">
+                <i class='bx bx-search'></i>
+                <input type="search" id="pp-search" placeholder="Search projects, e.g. Laravel, React, poster..."
+                    aria-label="Search projects" autocomplete="off">
+                <button id="pp-clear" aria-label="Clear search" hidden><i class='bx bx-x'></i></button>
+            </div>
+
+            <label class="pp-sort">
+                <span>Sort</span>
+                <select id="pp-sort" aria-label="Sort projects">
+                    <option value="featured">Featured</option>
+                    <option value="az">Name A–Z</option>
+                    <option value="za">Name Z–A</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="project-filters exp-tabs" id="pp-categories"></div>
+
+        <div class="pp-techs-wrap">
+            <span class="pp-label"><i class='bx bx-chip'></i> Technology</span>
+            <div class="pp-techs" id="pp-techs"></div>
+            <button class="pp-link" id="pp-tech-more" hidden></button>
+        </div>
+
+        <div class="pp-meta">
+            <span id="pp-count"></span>
+            <button class="pp-link pp-reset">Reset filters</button>
+        </div>
+
+        <div class="project-grid" id="pp-grid"></div>
+
+        <div class="pp-empty" id="pp-empty" hidden>
+            <i class='bx bx-search-alt'></i>
+            <h3>No projects found</h3>
+            <p>Try another keyword or remove some filters.</p>
+            <button class="btn pp-reset">Reset filters</button>
+        </div>
+
+        <div class="see-all-wrap">
+            <button class="btn" id="pp-more" hidden>Load more</button>
+        </div>
+    </section>
+
+    <!-- project detail popup -->
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal-box" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+            <button class="pm-close" id="pm-close" aria-label="Close"><i class='bx bx-x'></i></button>
+            <div class="pm-media" id="pm-media"></div>
+            <div class="pm-body">
+                <span class="pm-category" id="pm-category"></span>
+                <h3 id="pm-title"></h3>
+                <p id="pm-summary"></p>
+                <ul id="pm-details"></ul>
+                <div class="exp-tags" id="pm-tags"></div>
+                <div class="project-links" id="pm-links"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; <span id="year">2026</span> | All Rights Reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#projects" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <script src="js/projects.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/projects-ui.js"></script>
+</body>
+
+</html>

@@ -1,13 +1,4 @@
-/*========== menu icon navbar ==========*/
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
-const header = document.querySelector('.header');
-
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
-
+/* index.html only. Menu, dark mode & footer year live in common.js */
 
 /*========== scroll sections active link ==========*/
 const sections = document.querySelectorAll('section');
@@ -56,30 +47,22 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 
-/*========== dark light mode (saved across reloads) ==========*/
-const darkModeIcon = document.querySelector('#darkMode-icon');
+/*========== experience tabs ==========*/
+const expTabs = document.querySelectorAll('.experience .exp-tab');
 
-function setDarkMode(on) {
-    document.body.classList.toggle('dark-mode', on);
-    darkModeIcon.classList.toggle('bx-sun', on);
-}
+expTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        expTabs.forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.timeline').forEach(tl => tl.classList.remove('active'));
 
-try {
-    setDarkMode(localStorage.getItem('dark-mode') === 'true');
-} catch (e) { /* storage unavailable */ }
-
-darkModeIcon.onclick = () => {
-    const on = !document.body.classList.contains('dark-mode');
-    setDarkMode(on);
-    try {
-        localStorage.setItem('dark-mode', on);
-    } catch (e) { /* storage unavailable */ }
-};
-
-
-/*========== footer year ==========*/
-const yearEl = document.querySelector('#year');
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(tab.dataset.target).classList.add('active');
+    });
+});
 
 
 /*========== scroll reveal ==========*/
@@ -91,6 +74,6 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .kontakku', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img img, .services-container, .project-grid, .testimonial-wrapper, .kontakku', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });

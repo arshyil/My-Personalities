@@ -5,13 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arshyil</title>
+    <title>Muhammad Arshyil Azzim | Portfolio</title>
+    <meta name="description" content="Portfolio of Muhammad Arshyil Azzim, Computer Science student at BINUS University and ERP Software Developer intern. Web development, UI/UX and graphic design projects.">
+    <meta name="theme-color" content="#754ef9">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- preview when the link is shared (WhatsApp, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammad Arshyil Azzim | Portfolio">
+    <meta property="og:description" content="Web development, UI/UX and graphic design projects by Arshyil.">
+    <meta property="og:url" content="https://arshyil.github.io/My-Personalities/">
+    <meta property="og:image" content="https://arshyil.github.io/My-Personalities/images/og-image.jpg">
 
     <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.4.1/swiper-bundle.min.css" integrity="sha384-tOPXDsn4moKzmRcYpDt8mOcJWxzy89N8dK0oEkxTx90DZYjDdznDQ4IEiH1pcZH5" crossorigin="anonymous">
 
     <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous">
 
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
@@ -27,7 +37,8 @@
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#services">Skills</a>
-            <a href="#journey">Portfolio</a>
+            <a href="#experience">Experience</a>
+            <a href="#journey">Projects</a>
             <a href="#contact">My Contact</a>
         </nav>
 
@@ -83,6 +94,23 @@
             </div>
 
             <div class="overlay"></div>
+
+            <!-- tools + scroll hint (mobile only) -->
+            <div class="home-extra">
+                <p class="tools-title">My Tools</p>
+                <div class="tools">
+                    <span><i class='bx bxl-html5'></i>HTML</span>
+                    <span><i class='bx bxl-css3'></i>CSS</span>
+                    <span><i class='bx bxl-javascript'></i>JS</span>
+                    <span><i class='bx bxl-java'></i>Java</span>
+                    <span><i class='bx bxl-python'></i>Python</span>
+                    <span><i class='bx bxl-figma'></i>Figma</span>
+                </div>
+                <a href="#about" class="scroll-down">
+                    <span>Scroll</span>
+                    <i class='bx bx-chevron-down'></i>
+                </a>
+            </div>
         </div>
 
         <div class="home-img">
@@ -99,22 +127,20 @@
         <div class="about-content">
             <h2 class="heading">About <span>Me</span></h2>
             <h3>
-                Hi there, welcome to my website! I'm Arshyil,
-                a passionate web developer who enjoys learning new technologies
-                and solving problems with code! Be Better Than Before!
+                Hi, I'm Arshyil, a Computer Science student at BINUS University
+                who loves turning ideas into websites people actually use.
             </h3>
             <p>
-                This website is my personal blog where I write about web development
-                topics that interest me and inspire me.
+                I'm currently an ERP Software Developer intern at PT HashMicro Solusi Indonesia.
+                Outside of work, I build web apps such as a workout planner, an order system
+                for a polaroid photo business, and websites for a GTA V roleplay community.
             </p>
             <p>
-                Thank you for visiting my website and getting to know me better. I hope you
-                enjoyed reading my blog posts and
-                found
-                them useful and informative. If you have any feedback or
-                suggestions, please let me know. I'd love to hear from you.
+                Before coding, I started with graphic design: logos, posters, vehicle liveries
+                and video editing. That's why I care about both how things work and how they look.
+                My motto: <strong>Be Better Than Before!</strong>
             </p>
-            <a href="#services" class="btn">Read More</a>
+            <a href="#contact" class="btn">Let's Connect</a>
         </div>
     </section>
 
@@ -127,95 +153,197 @@
                 <i class='bx bx-code-alt'></i>
                 <h3>Web Developer</h3>
                 <p>I enjoy building websites with clean layouts and optimal functionality, combining creativity with programming logic.</p>
-                <a href="#journey" class="btn">See Portfolio</a>
+                <a href="#journey" class="btn">See Projects</a>
             </div>
             <div class="services-box">
                 <i class='bx bxs-paint'></i>
                 <h3>Design Graphic</h3>
                 <p>I am passionate about design, especially in creating visuals that are aesthetic, engaging, and communicative.</p>
-                <a href="#journey" class="btn">See Portfolio</a>
+                <a href="#journey" class="btn">See Projects</a>
             </div>
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>UI/UX Designer</h3>
                 <p>I love designing simple, interactive, and user-friendly website interfaces to deliver the best user experience.</p>
-                <a href="#journey" class="btn">See Portfolio</a>
+                <a href="#journey" class="btn">See Projects</a>
             </div>
         </div>
     </section>
 
-    <!-- portfolio section design -->
+    <!-- experience section design -->
+    <section class="experience" id="experience">
+        <h2 class="heading">My <span>Experience</span></h2>
+
+        <div class="exp-tabs" role="tablist">
+            <button class="exp-tab active" role="tab" aria-selected="true" data-target="exp-work">
+                <i class='bx bx-briefcase-alt-2'></i> Work
+            </button>
+            <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-org">
+                <i class='bx bx-group'></i> Organization
+            </button>
+            <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-edu">
+                <i class='bx bxs-graduation'></i> Education
+            </button>
+        </div>
+
+        <!-- work experience -->
+        <div class="timeline active" id="exp-work">
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bx-code-alt'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">Feb 2026 – Feb 2027</span>
+                    <em class="exp-now">Active</em>
+                    <h3>ERP Software Developer</h3>
+                    <p class="exp-place"><i class='bx bx-buildings'></i> PT HashMicro Solusi Indonesia · Internship</p>
+                    <ul>
+                        <li>One-year internship as an ERP Software Developer.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>ERP</span><span>Software Development</span><span>Internship</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bx-joystick'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">Jun 2024 – Aug 2025</span>
+                    <h3>Senior Modder</h3>
+                    <p class="exp-place"><i class='bx bx-buildings'></i> Freelance Game Modder – GTA V Roleplay · Jakarta</p>
+                    <ul>
+                        <li>Designed logos for server branding and community identity.</li>
+                        <li>Created posters for announcements, events, and promotional campaigns.</li>
+                        <li>Developed custom in-game apparel designs for player characters.</li>
+                        <li>Produced vehicle livery designs for player-owned cars.</li>
+                        <li>Edited and produced promotional and community videos.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Logo Design</span><span>Poster</span><span>Apparel</span><span>Livery</span><span>Video Editing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bx-palette'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">May 2022 – Mar 2023</span>
+                    <h3>Graphic Designer</h3>
+                    <p class="exp-place"><i class='bx bx-buildings'></i> Islamic Boarding School · Palembang</p>
+                    <ul>
+                        <li>Designed posters for school activities, internal events, and public promotions.</li>
+                        <li>Edited photos in Adobe Photoshop for documentation, publications, and social media.</li>
+                        <li>Maintained visual identity consistency across all school design materials.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Photoshop</span><span>Poster</span><span>Photo Editing</span><span>Branding</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- organizational experience -->
+        <div class="timeline" id="exp-org">
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bx-code-block'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">Oct 2023 – Present</span>
+                    <em class="exp-now">Active</em>
+                    <h3>Member</h3>
+                    <p class="exp-place"><i class='bx bx-buildings'></i> HIMTI · Jakarta</p>
+                    <ul>
+                        <li>Actively participated in computer science and technology events.</li>
+                        <li>Supported creative tasks such as poster and visual design for student events.</li>
+                        <li>Built teamwork, communication, and collaboration skills.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Teamwork</span><span>Poster</span><span>Event</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bx-desktop'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">Aug 2021 – Feb 2022</span>
+                    <h3>Chief</h3>
+                    <p class="exp-place"><i class='bx bx-buildings'></i> Organization Computer Center · Ponorogo</p>
+                    <ul>
+                        <li>Led the design and creative direction for posters and visuals of school events.</li>
+                        <li>Supervised a team managing school computers, maintenance, and software installation.</li>
+                        <li>Coordinated technical and creative tasks for system and branding needs.</li>
+                    </ul>
+                    <div class="exp-tags">
+                        <span>Leadership</span><span>Maintenance</span><span>Creative Direction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- education -->
+        <div class="timeline" id="exp-edu">
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bxs-graduation'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">Aug 2023 – Present</span>
+                    <em class="exp-now">Active</em>
+                    <h3>Bachelor of Computer Science</h3>
+                    <p class="exp-place"><i class='bx bx-buildings'></i> Bina Nusantara University · Jakarta</p>
+                    <div class="exp-tags">
+                        <span>Computer Science</span><span>HIMTI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"><i class='bx bx-book-open'></i></div>
+                <div class="timeline-card">
+                    <span class="exp-date">Graduated</span>
+                    <h3>Islamic Boarding School</h3>
+                    <ul>
+                        <li>Completed my studies with satisfactory grades.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section design -->
     <section class="portfolio" id="journey">
-        <h2 class="heading">My<span> Portfolio</span></h2>
+        <h2 class="heading">My <span>Projects</span></h2>
+        <p class="section-sub">Some highlights of what I have built and designed. Tap a card to see more.</p>
 
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <img src="images/graphicDesign.jpg" alt="Graphic Design" loading="lazy">
+        <!-- highlights: featured first, max 6 cards (data in js/projects.js) -->
+        <div class="project-grid" id="project-grid" data-limit="6"></div>
 
-                <div class="portfolio-layer">
-                    <h4>Graphic Design</h4>
-                    <p>You can see my collection of graphic designs by clicking here.</p>
-                    <a href="https://drive.google.com/drive/folders/1OqwVhRz4tha8HmqDlUYvOtOK5KatWLru?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/Logo_Design.jpg" alt="Logo Design" loading="lazy">
-
-                <div class="portfolio-layer">
-                    <h4>Logo Design</h4>
-                    <p>You can view the collection of logos I have created here.</p>
-                    <a href="https://drive.google.com/drive/folders/1bp2ZpnsoGtiWAazzFCUWnXN4j44FvdlY?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/myPoster.jpg" alt="My Posters" loading="lazy">
-
-                <div class="portfolio-layer">
-                    <h4>My Posters</h4>
-                    <p>You can view the collection of posters I have made here.</p>
-                    <a href="https://drive.google.com/drive/folders/1laZK0CAHdLNiIGXooAF-T2otstHxC6vS?usp=sharing" target="_blank" rel="noopener noreferrer">
-                        <i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/vkellog.jpg" alt="College Project" loading="lazy">
-
-                <div class="portfolio-layer">
-                    <h4>College Project</h4>
-                    <p>A project accomplished as part of my academic journey at university. 
-                        This project was developed for desktop only and is not responsive on mobile devices.</p>
-                    <a href="https://arshyil.github.io/Vkellog-Project/" target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/FigmaProject.png" alt="UI/UX Design" loading="lazy">
-
-                <div class="portfolio-layer">
-                    <h4>UI/UX Design</h4>
-                    <p>A collection of UI/UX designs crafted in Figma during my college journey, 
-                        focusing on modern layouts and user-friendly experiences.</p>
-                    <a href="file/Link_to_Figma_Project.pdf" target="_blank" rel="noopener noreferrer"><i class='bx bx-link-external'></i></a>
-                </div>
-            </div>
-            <div class="portfolio-box">
-                <img src="images/kelas6.jpg" alt="Studies Completed" loading="lazy">
-
-                <div class="portfolio-layer">
-                    <h4>Studies Completed</h4>
-                    <p>I have completed my studies at the Islamic Boarding School with satisfactory grades.</p>
-                </div>
-            </div>
+        <div class="see-all-wrap">
+            <a href="projects.html" class="btn see-all">
+                See All Projects (<span id="see-all-count">0</span>) <i class='bx bx-right-arrow-alt'></i>
+            </a>
         </div>
     </section>
+
+    <!-- project detail popup -->
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal-box" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+            <button class="pm-close" id="pm-close" aria-label="Close"><i class='bx bx-x'></i></button>
+            <div class="pm-media" id="pm-media"></div>
+            <div class="pm-body">
+                <span class="pm-category" id="pm-category"></span>
+                <h3 id="pm-title"></h3>
+                <p id="pm-summary"></p>
+                <ul id="pm-details"></ul>
+                <div class="exp-tags" id="pm-tags"></div>
+                <div class="project-links" id="pm-links"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- testimonial design -->
     <div class="testimonial-container">
         <h2 class="heading">My Role <span>Model</span></h2>
 
         <div class="testimonial-wrapper">
-            <div class="testimonial-box mySwiper">
+            <div class="testimonial-box swiper mySwiper">
                 <div class="testimonial-content swiper-wrapper">
                     <div class="testimonial-slide swiper-slide">
                         <img src="images/alucard.png" alt="Alucard" loading="lazy">
@@ -268,12 +396,15 @@
 
 
     <!-- scroll reveal -->
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" integrity="sha384-/Mm/FNRz5xZHO/GuuAUw93l4PLUyI1RfkXnlY65kdR+jBmgt/ih19KrCNqVI9gKS" crossorigin="anonymous"></script>
 
     <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9.4.1/swiper-bundle.min.js" integrity="sha384-hPkhOzAEx2ZcJuDkANAhjXmtEnqjkADleTxUbwTTJLmwmhV2F4/u6BOcnVL3xxqs" crossorigin="anonymous"></script>
 
     <!-- custom js -->
+    <script src="js/projects.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/projects-ui.js"></script>
     <script src="js/script.js"></script>
 </body>
 
