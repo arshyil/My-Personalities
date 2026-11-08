@@ -748,7 +748,8 @@ span {
     }
 
     .home {
-        padding: 0 3% 23rem;
+        position: relative;
+        padding: 8rem 3% 36rem;
         justify-content: center;
         text-align: center;
     }
@@ -771,11 +772,15 @@ span {
         height: 100%;
     }
 
+    /* anchor the wheel to the bottom of the home section,
+       so long text never slides under it */
     .home .profession-container .profession-box {
         position: fixed;
-        top: 450px;
+        top: auto;
+        bottom: -16rem;
         left: 0;
         width: 100%;
+        height: 6rem;
     }
 
     .home .profession-box .profession {
@@ -813,7 +818,8 @@ span {
 
     .home .profession-container .overlay {
         position: fixed;
-        top: 70rem;
+        top: auto;
+        bottom: -35rem;
         left: 50%;
         right: 0;
         transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
@@ -880,7 +886,7 @@ span {
     }
 
     .home .profession-container .overlay {
-        top: 80rem;
+        bottom: -24.8rem;
     }
 
 
