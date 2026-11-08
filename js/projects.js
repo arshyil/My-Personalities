@@ -13,6 +13,7 @@ const PROJECTS = [
     {
         title: 'Sebingkai',
         category: 'web',
+        private: true,
         featured: true,
         image: 'images/project-sebingkai.jpg',
         icon: 'bx-camera',
@@ -25,13 +26,13 @@ const PROJECTS = [
         ],
         tags: ['React', 'TypeScript', 'WebRTC', 'PeerJS'],
         links: [
-            { type: 'live', url: 'https://orange-falcon-621949.hostingersite.com/' },
-            { type: 'code', url: 'https://github.com/arshyil/Sebingkai' }
+            { type: 'live', url: 'https://orange-falcon-621949.hostingersite.com/' }
         ]
     },
     {
         title: 'Next Level',
         category: 'web',
+        private: true,
         featured: true,
         image: 'images/project-nextlevel.jpg',
         icon: 'bx-joystick',
@@ -42,8 +43,7 @@ const PROJECTS = [
         ],
         tags: ['Next.js', 'TypeScript', 'i18n'],
         links: [
-            { type: 'live', url: 'https://nextlevelcommunity.site/' },
-            { type: 'code', url: 'https://github.com/arshyil/nextlevel' }
+            { type: 'live', url: 'https://nextlevelcommunity.site/' }
         ]
     },
     {
@@ -59,13 +59,13 @@ const PROJECTS = [
         tags: ['HTML', 'CSS', 'JavaScript', 'Laravel'],
         links: [
             { type: 'live', url: 'https://arshyil.github.io/HypeStep/' },
-            { type: 'code', url: 'https://github.com/arshyil/HypeStep' },
-            { type: 'code', label: 'Laravel', url: 'https://github.com/arshyil/Web-Programming-HypeStep-' }
+            { type: 'code', url: 'https://github.com/arshyil/HypeStep' }
         ]
     },
     {
         title: 'Gym Planner',
         category: 'web',
+        private: true,
         featured: true,
         image: 'images/project-gym.jpg',
         icon: 'bx-dumbbell',
@@ -79,13 +79,13 @@ const PROJECTS = [
         ],
         tags: ['PHP', 'MySQL', 'Tailwind CSS', 'Alpine.js', 'Chart.js', 'Capacitor'],
         links: [
-            { type: 'live', url: 'https://gymplanner.site/' },
-            { type: 'code', url: 'https://github.com/arshyil/Gym-Planner' }
+            { type: 'live', url: 'https://gymplanner.site/' }
         ]
     },
     {
         title: 'Kajja Photo',
         category: 'web',
+        private: true,
         image: 'images/project-kajja.jpg',
         icon: 'bx-camera',
         summary: 'Website and order system for an instant polaroid photo service at concerts, festivals and events.',
@@ -96,8 +96,7 @@ const PROJECTS = [
         ],
         tags: ['PHP', 'SQLite', 'JavaScript'],
         links: [
-            { type: 'live', url: 'https://darkturquoise-camel-565266.hostingersite.com/' },
-            { type: 'code', url: 'https://github.com/arshyil/kajja-photo' }
+            { type: 'live', url: 'https://darkturquoise-camel-565266.hostingersite.com/' }
         ]
     },
     {
