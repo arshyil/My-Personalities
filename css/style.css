@@ -749,7 +749,8 @@ span {
 
     .home {
         position: relative;
-        padding: 8rem 3% 36rem;
+        min-height: auto;
+        padding: 10rem 3% 36rem;
         justify-content: center;
         text-align: center;
     }
@@ -819,7 +820,7 @@ span {
     .home .profession-container .overlay {
         position: fixed;
         top: auto;
-        bottom: -35rem;
+        bottom: -40rem;
         left: 50%;
         right: 0;
         transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
@@ -886,7 +887,7 @@ span {
     }
 
     .home .profession-container .overlay {
-        bottom: -24.8rem;
+        bottom: -30rem;
     }
 
 
