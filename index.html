@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Arshyil Azzim | Portfolio</title>
+    <title data-i18n="meta.title">Muhammad Arshyil Azzim | Portfolio</title>
     <meta name="description" content="Portfolio of Muhammad Arshyil Azzim, Computer Science student at BINUS University and ERP Software Developer intern. Web development, UI/UX and graphic design projects.">
     <meta name="theme-color" content="#754ef9">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -17,8 +17,6 @@
     <meta property="og:url" content="https://arshyil.github.io/My-Personalities/">
     <meta property="og:image" content="https://arshyil.github.io/My-Personalities/images/og-image.jpg">
 
-    <!-- swiper css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9.4.1/swiper-bundle.min.css" integrity="sha384-tOPXDsn4moKzmRcYpDt8mOcJWxzy89N8dK0oEkxTx90DZYjDdznDQ4IEiH1pcZH5" crossorigin="anonymous">
 
     <!-- box icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous">
@@ -32,14 +30,19 @@
     <!-- header design -->
     <header class="header">
         <a href="index.html" class="logo">My Personalities.</a>
+        <button class="lang-toggle" id="lang-toggle" type="button"
+            aria-label="Switch language / Ganti bahasa" title="English / Bahasa Indonesia">
+            <i class='bx bx-globe'></i><span class="lang-code">EN</span>
+        </button>
+
 
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#journey">Projects</a>
-            <a href="#contact">My Contact</a>
+            <a href="#home" class="active" data-i18n="nav.home">Home</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#services" data-i18n="nav.skills">Skills</a>
+            <a href="#experience" data-i18n="nav.exp">Experience</a>
+            <a href="#journey" data-i18n="nav.projects">Projects</a>
+            <a href="#contact" data-i18n="nav.contact">My Contact</a>
         </nav>
 
         <div class="bx bx-moon" id="darkMode-icon"></div>
@@ -50,14 +53,14 @@
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Hello, I am</h3>
+            <h3 data-i18n="home.hello">Hello, I am</h3>
             <h1>Muhammad Arshyil Azzim</h1>
-            <p>
+            <p data-i18n="home.p1">
                 I am a Computer Science student at BINUS University with a strong passion for technology. 
                 I enjoy exploring various programming languages such as HTML, CSS, Java etc, while continuously 
                 sharpening my skills in building creative solutions through coding
             </p>
-            <p>In addition, I have a deep interest in graphic design, as I believe technology and visual art 
+            <p data-i18n="home.p2">In addition, I have a deep interest in graphic design, as I believe technology and visual art 
                 complement each other in creating meaningful works.</p>
 
             <div class="social-media">
@@ -68,7 +71,7 @@
                 <a href="https://discord.gg/3tyyKyWk4a" target="_blank" rel="noopener noreferrer"><i class='bx bxl-discord'></i></a>
             </div>
 
-            <a href="file/MuhammadArshyilAzzim_CV.pdf" class="btn" download="CV.pdf">Download CV</a>
+            <a href="file/MuhammadArshyilAzzim_CV.pdf" class="btn" download="CV.pdf" data-i18n="home.cv">Download CV</a>
         </div>
 
         <div class="profession-container">
@@ -83,11 +86,11 @@
                 </div>
                 <div class="profession" style="--i:2;">
                     <i class='bx bx-palette'></i>
-                    <h3>Design Graphic</h3>
+                    <h3 data-i18n="home.design">Design Graphic</h3>
                 </div>
                 <div class="profession" style="--i:3;">
                     <i class='bx bx-video-recording'></i>
-                    <h3>Video Editing</h3>
+                    <h3 data-i18n="home.video">Video Editing</h3>
                 </div>
 
                 <div class="circle"></div>
@@ -97,7 +100,7 @@
 
             <!-- tools + scroll hint (mobile only) -->
             <div class="home-extra">
-                <p class="tools-title">My Tools</p>
+                <p class="tools-title" data-i18n="home.tools">My Tools</p>
                 <div class="tools">
                     <span><i class='bx bxl-html5'></i>HTML</span>
                     <span><i class='bx bxl-css3'></i>CSS</span>
@@ -107,7 +110,7 @@
                     <span><i class='bx bxl-figma'></i>Figma</span>
                 </div>
                 <a href="#about" class="scroll-down">
-                    <span>Scroll</span>
+                    <span data-i18n="home.scroll">Scroll</span>
                     <i class='bx bx-chevron-down'></i>
                 </a>
             </div>
@@ -125,63 +128,63 @@
         </div>
 
         <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>
+            <h2 class="heading" data-i18n="about.title">About <span>Me</span></h2>
+            <h3 data-i18n="about.h3">
                 Hi, I'm Arshyil, a Computer Science student at BINUS University
                 who loves turning ideas into websites people actually use.
             </h3>
-            <p>
+            <p data-i18n="about.p1">
                 I'm currently an ERP Software Developer intern at PT HashMicro Solusi Indonesia.
                 Outside of work, I build web apps such as a workout planner, an order system
                 for a polaroid photo business, and websites for a GTA V roleplay community.
             </p>
-            <p>
+            <p data-i18n="about.p2">
                 Before coding, I started with graphic design: logos, posters, vehicle liveries
                 and video editing. That's why I care about both how things work and how they look.
                 My motto: <strong>Be Better Than Before!</strong>
             </p>
-            <a href="#contact" class="btn">Let's Connect</a>
+            <a href="#contact" class="btn" data-i18n="about.cta">Let's Connect</a>
         </div>
     </section>
 
     <!-- services section design -->
     <section class="services" id="services">
-        <h2 class="heading">My <span>Skills</span></h2>
+        <h2 class="heading" data-i18n="skills.title">My <span>Skills</span></h2>
 
         <div class="services-container">
             <div class="services-box">
                 <i class='bx bx-code-alt'></i>
                 <h3>Web Developer</h3>
-                <p>I enjoy building websites with clean layouts and optimal functionality, combining creativity with programming logic.</p>
-                <a href="#journey" class="btn">See Projects</a>
+                <p data-i18n="skills.web">I enjoy building websites with clean layouts and optimal functionality, combining creativity with programming logic.</p>
+                <a href="#journey" class="btn" data-i18n="skills.see">See Projects</a>
             </div>
             <div class="services-box">
                 <i class='bx bxs-paint'></i>
-                <h3>Design Graphic</h3>
-                <p>I am passionate about design, especially in creating visuals that are aesthetic, engaging, and communicative.</p>
-                <a href="#journey" class="btn">See Projects</a>
+                <h3 data-i18n="home.design">Design Graphic</h3>
+                <p data-i18n="skills.design">I am passionate about design, especially in creating visuals that are aesthetic, engaging, and communicative.</p>
+                <a href="#journey" class="btn" data-i18n="skills.see">See Projects</a>
             </div>
             <div class="services-box">
-                <i class='bx bx-code-alt'></i>
+                <i class='bx bxl-figma'></i>
                 <h3>UI/UX Designer</h3>
-                <p>I love designing simple, interactive, and user-friendly website interfaces to deliver the best user experience.</p>
-                <a href="#journey" class="btn">See Projects</a>
+                <p data-i18n="skills.uiux">I love designing simple, interactive, and user-friendly website interfaces to deliver the best user experience.</p>
+                <a href="#journey" class="btn" data-i18n="skills.see">See Projects</a>
             </div>
         </div>
     </section>
 
     <!-- experience section design -->
     <section class="experience" id="experience">
-        <h2 class="heading">My <span>Experience</span></h2>
+        <h2 class="heading" data-i18n="exp.title">My <span>Experience</span></h2>
 
         <div class="exp-tabs" role="tablist">
-            <button class="exp-tab active" role="tab" aria-selected="true" data-target="exp-work">
+            <button class="exp-tab active" role="tab" aria-selected="true" data-target="exp-work" data-i18n="exp.work">
                 <i class='bx bx-briefcase-alt-2'></i> Work
             </button>
-            <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-org">
+            <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-org" data-i18n="exp.org">
                 <i class='bx bx-group'></i> Organization
             </button>
-            <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-edu">
+            <button class="exp-tab" role="tab" aria-selected="false" data-target="exp-edu" data-i18n="exp.edu">
                 <i class='bx bxs-graduation'></i> Education
             </button>
         </div>
@@ -192,11 +195,11 @@
                 <div class="timeline-dot"><i class='bx bx-code-alt'></i></div>
                 <div class="timeline-card">
                     <span class="exp-date">Feb 2026 – Feb 2027</span>
-                    <em class="exp-now">Active</em>
+                    <em class="exp-now" data-i18n="exp.active">Active</em>
                     <h3>ERP Software Developer</h3>
-                    <p class="exp-place"><i class='bx bx-buildings'></i> PT HashMicro Solusi Indonesia · Internship</p>
+                    <p class="exp-place" data-i18n="exp.hm.place"><i class='bx bx-buildings'></i> PT HashMicro Solusi Indonesia · Internship</p>
                     <ul>
-                        <li>One-year internship as an ERP Software Developer.</li>
+                        <li data-i18n="exp.hm.1">One-year internship as an ERP Software Developer.</li>
                     </ul>
                     <div class="exp-tags">
                         <span>ERP</span><span>Software Development</span><span>Internship</span>
@@ -207,15 +210,15 @@
             <div class="timeline-item">
                 <div class="timeline-dot"><i class='bx bx-joystick'></i></div>
                 <div class="timeline-card">
-                    <span class="exp-date">Jun 2024 – Aug 2025</span>
+                    <span class="exp-date" data-i18n="exp.date.mod">Jun 2024 – Aug 2025</span>
                     <h3>Senior Modder</h3>
                     <p class="exp-place"><i class='bx bx-buildings'></i> Freelance Game Modder – GTA V Roleplay · Jakarta</p>
                     <ul>
-                        <li>Designed logos for server branding and community identity.</li>
-                        <li>Created posters for announcements, events, and promotional campaigns.</li>
-                        <li>Developed custom in-game apparel designs for player characters.</li>
-                        <li>Produced vehicle livery designs for player-owned cars.</li>
-                        <li>Edited and produced promotional and community videos.</li>
+                        <li data-i18n="exp.mod.1">Designed logos for server branding and community identity.</li>
+                        <li data-i18n="exp.mod.2">Created posters for announcements, events, and promotional campaigns.</li>
+                        <li data-i18n="exp.mod.3">Developed custom in-game apparel designs for player characters.</li>
+                        <li data-i18n="exp.mod.4">Produced vehicle livery designs for player-owned cars.</li>
+                        <li data-i18n="exp.mod.5">Edited and produced promotional and community videos.</li>
                     </ul>
                     <div class="exp-tags">
                         <span>Logo Design</span><span>Poster</span><span>Apparel</span><span>Livery</span><span>Video Editing</span>
@@ -226,13 +229,13 @@
             <div class="timeline-item">
                 <div class="timeline-dot"><i class='bx bx-palette'></i></div>
                 <div class="timeline-card">
-                    <span class="exp-date">May 2022 – Mar 2023</span>
-                    <h3>Graphic Designer</h3>
-                    <p class="exp-place"><i class='bx bx-buildings'></i> Islamic Boarding School · Palembang</p>
+                    <span class="exp-date" data-i18n="exp.date.gd">May 2022 – Mar 2023</span>
+                    <h3 data-i18n="exp.gd.title">Graphic Designer</h3>
+                    <p class="exp-place" data-i18n="exp.gd.place"><i class='bx bx-buildings'></i> Islamic Boarding School · Palembang</p>
                     <ul>
-                        <li>Designed posters for school activities, internal events, and public promotions.</li>
-                        <li>Edited photos in Adobe Photoshop for documentation, publications, and social media.</li>
-                        <li>Maintained visual identity consistency across all school design materials.</li>
+                        <li data-i18n="exp.gd.1">Designed posters for school activities, internal events, and public promotions.</li>
+                        <li data-i18n="exp.gd.2">Edited photos in Adobe Photoshop for documentation, publications, and social media.</li>
+                        <li data-i18n="exp.gd.3">Maintained visual identity consistency across all school design materials.</li>
                     </ul>
                     <div class="exp-tags">
                         <span>Photoshop</span><span>Poster</span><span>Photo Editing</span><span>Branding</span>
@@ -246,14 +249,14 @@
             <div class="timeline-item">
                 <div class="timeline-dot"><i class='bx bx-code-block'></i></div>
                 <div class="timeline-card">
-                    <span class="exp-date">Oct 2023 – Present</span>
-                    <em class="exp-now">Active</em>
-                    <h3>Member</h3>
+                    <span class="exp-date" data-i18n="exp.date.himti">Oct 2023 – Present</span>
+                    <em class="exp-now" data-i18n="exp.active">Active</em>
+                    <h3 data-i18n="exp.himti.title">Member</h3>
                     <p class="exp-place"><i class='bx bx-buildings'></i> HIMTI · Jakarta</p>
                     <ul>
-                        <li>Actively participated in computer science and technology events.</li>
-                        <li>Supported creative tasks such as poster and visual design for student events.</li>
-                        <li>Built teamwork, communication, and collaboration skills.</li>
+                        <li data-i18n="exp.himti.1">Actively participated in computer science and technology events.</li>
+                        <li data-i18n="exp.himti.2">Supported creative tasks such as poster and visual design for student events.</li>
+                        <li data-i18n="exp.himti.3">Built teamwork, communication, and collaboration skills.</li>
                     </ul>
                     <div class="exp-tags">
                         <span>Teamwork</span><span>Poster</span><span>Event</span>
@@ -264,13 +267,13 @@
             <div class="timeline-item">
                 <div class="timeline-dot"><i class='bx bx-desktop'></i></div>
                 <div class="timeline-card">
-                    <span class="exp-date">Aug 2021 – Feb 2022</span>
-                    <h3>Chief</h3>
-                    <p class="exp-place"><i class='bx bx-buildings'></i> Organization Computer Center · Ponorogo</p>
+                    <span class="exp-date" data-i18n="exp.date.cc">Aug 2021 – Feb 2022</span>
+                    <h3 data-i18n="exp.cc.title">Chief</h3>
+                    <p class="exp-place" data-i18n="exp.cc.place"><i class='bx bx-buildings'></i> Organization Computer Center · Ponorogo</p>
                     <ul>
-                        <li>Led the design and creative direction for posters and visuals of school events.</li>
-                        <li>Supervised a team managing school computers, maintenance, and software installation.</li>
-                        <li>Coordinated technical and creative tasks for system and branding needs.</li>
+                        <li data-i18n="exp.cc.1">Led the design and creative direction for posters and visuals of school events.</li>
+                        <li data-i18n="exp.cc.2">Supervised a team managing school computers, maintenance, and software installation.</li>
+                        <li data-i18n="exp.cc.3">Coordinated technical and creative tasks for system and branding needs.</li>
                     </ul>
                     <div class="exp-tags">
                         <span>Leadership</span><span>Maintenance</span><span>Creative Direction</span>
@@ -284,9 +287,9 @@
             <div class="timeline-item">
                 <div class="timeline-dot"><i class='bx bxs-graduation'></i></div>
                 <div class="timeline-card">
-                    <span class="exp-date">Aug 2023 – Present</span>
-                    <em class="exp-now">Active</em>
-                    <h3>Bachelor of Computer Science</h3>
+                    <span class="exp-date" data-i18n="exp.date.binus">Aug 2023 – Present</span>
+                    <em class="exp-now" data-i18n="exp.active">Active</em>
+                    <h3 data-i18n="exp.binus.title">Bachelor of Computer Science</h3>
                     <p class="exp-place"><i class='bx bx-buildings'></i> Bina Nusantara University · Jakarta</p>
                     <div class="exp-tags">
                         <span>Computer Science</span><span>HIMTI</span>
@@ -297,10 +300,10 @@
             <div class="timeline-item">
                 <div class="timeline-dot"><i class='bx bx-book-open'></i></div>
                 <div class="timeline-card">
-                    <span class="exp-date">Graduated</span>
-                    <h3>Islamic Boarding School</h3>
+                    <span class="exp-date" data-i18n="exp.grad">Graduated</span>
+                    <h3 data-i18n="exp.school">Islamic Boarding School</h3>
                     <ul>
-                        <li>Completed my studies with satisfactory grades.</li>
+                        <li data-i18n="exp.school.1">Completed my studies with satisfactory grades.</li>
                     </ul>
                 </div>
             </div>
@@ -309,15 +312,15 @@
 
     <!-- projects section design -->
     <section class="portfolio" id="journey">
-        <h2 class="heading">My <span>Projects</span></h2>
-        <p class="section-sub">Some highlights of what I have built and designed. Tap a card to see more.</p>
+        <h2 class="heading" data-i18n="proj.title">My <span>Projects</span></h2>
+        <p class="section-sub" data-i18n="proj.sub">Some highlights of what I have built and designed. Tap a card to see more.</p>
 
         <!-- highlights: featured first, max 6 cards (data in js/projects.js) -->
         <div class="project-grid" id="project-grid" data-limit="6"></div>
 
         <div class="see-all-wrap">
             <a href="projects.html" class="btn see-all">
-                See All Projects (<span id="see-all-count">0</span>) <i class='bx bx-right-arrow-alt'></i>
+                <span data-i18n="proj.seeAll">See All Projects</span> (<span id="see-all-count">0</span>) <i class='bx bx-right-arrow-alt'></i>
             </a>
         </div>
     </section>
@@ -325,7 +328,7 @@
     <!-- project detail popup -->
     <div class="project-modal" id="project-modal" aria-hidden="true">
         <div class="project-modal-box" role="dialog" aria-modal="true" aria-labelledby="pm-title">
-            <button class="pm-close" id="pm-close" aria-label="Close"><i class='bx bx-x'></i></button>
+            <button class="pm-close" id="pm-close" aria-label="Close" data-i18n-attr="aria-label:common.close"><i class='bx bx-x'></i></button>
             <div class="pm-media" id="pm-media"></div>
             <div class="pm-body">
                 <span class="pm-category" id="pm-category"></span>
@@ -338,59 +341,127 @@
         </div>
     </div>
 
-    <!-- testimonial design -->
-    <div class="testimonial-container">
-        <h2 class="heading">My Role <span>Model</span></h2>
+    <!-- principles -->
+    <section class="principles" id="principles">
+        <h2 class="heading" data-i18n="pr.title">My <span>Principles</span></h2>
+        <p class="section-sub" data-i18n="pr.sub">The values I hold on to, in good days and hard ones.</p>
 
-        <div class="testimonial-wrapper">
-            <div class="testimonial-box swiper mySwiper">
-                <div class="testimonial-content swiper-wrapper">
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/alucard.png" alt="Alucard" loading="lazy">
-                        <h3>Alucard</h3>
-                        <p>Nothing last forever, we can change the future!</p>
-                    </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/bung.jpeg" alt="Bung Karno" loading="lazy">
-                        <h3>Bung Karno</h3>
-                        <p>Seribu orang tua bisa bermimpi, satu orang pemuda bisa mengubah dunia.</p>
-                    </div>
-                    <div class="testimonial-slide swiper-slide">
-                        <img src="images/jendral.jpeg" alt="Jendral Sudirman" loading="lazy">
-                        <h3>Jendral Sudirman</h3>
-                        <p>Kadang kita terlalu sibuk memikirkan kesulitan-kesulitan sehingga
-                            kita tidak punya waktu untuk mensyukuri rahmat Tuhan.</p>
-                    </div>
+        <div class="motto-card">
+            <i class='bx bxs-quote-alt-left motto-mark' aria-hidden="true"></i>
+            <span class="motto-label" data-i18n="pr.label"><i class='bx bxs-star'></i> My life motto</span>
+            <h3 class="motto-text">Be Better Than Before!</h3>
+            <p data-i18n="pr.motto">Keep learning, keep growing. My only competition is the person I was yesterday.</p>
+        </div>
+
+        <div class="principle-grid">
+            <article class="principle-card">
+                <span class="principle-num">01</span>
+                <i class='bx bx-wind'></i>
+                <div>
+                    <h4 data-i18n="pr.1.t">&ldquo;Calm mind, clear choices.&rdquo;</h4>
+                    <p data-i18n="pr.1.p">Never make a decision when emotions are running high. Every important choice is made only when I'm truly calm.</p>
+                </div>
+            </article>
+            <article class="principle-card">
+                <span class="principle-num">02</span>
+                <i class='bx bx-time-five'></i>
+                <div>
+                    <h4>&ldquo;Nothing lasts forever, we can change the future!&rdquo;</h4>
+                    <p data-i18n="pr.2.p">Nothing in this world is permanent, so today is never final. What happens next is still in our hands.</p>
+                </div>
+            </article>
+            <article class="principle-card">
+                <span class="principle-num">03</span>
+                <i class='bx bx-heart'></i>
+                <div>
+                    <h4 data-i18n="pr.3.t">&ldquo;Treat others the way you want to be treated.&rdquo;</h4>
+                    <p data-i18n="pr.3.p">Respect, honesty and kindness come back around. I give what I hope to receive.</p>
+                </div>
+            </article>
+            <article class="principle-card">
+                <span class="principle-num">04</span>
+                <i class='bx bx-target-lock'></i>
+                <div>
+                    <h4 data-i18n="pr.4.t">&ldquo;Stay consistent, never quit halfway.&rdquo;</h4>
+                    <p data-i18n="pr.4.p">Keep the spirit up and never give up. Small steps, done every day, finish what I started.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section class="contact" id="contact">
+        <h2 class="heading" data-i18n="ct.title">My <span>Contact</span></h2>
+        <p class="section-sub" data-i18n="ct.sub">Have a project, an opportunity, or just want to say hi? My inbox is always open.</p>
+
+        <div class="contact-wrap">
+            <div class="contact-card">
+                <span class="contact-status" data-i18n="ct.status"><span class="dot"></span> Open to collaboration</span>
+                <h3 data-i18n="ct.h3">Let's build something great together.</h3>
+
+                <a class="contact-mail" href="mailto:muhammadarshyilazzim@gmail.com">
+                    <i class='bx bx-envelope'></i>
+                    <span><small data-i18n="ct.mail">Email me</small>muhammadarshyilazzim@gmail.com</span>
+                </a>
+
+                <div class="contact-actions">
+                    <button class="contact-btn" id="copy-email" data-email="muhammadarshyilazzim@gmail.com" type="button">
+                        <i class='bx bx-copy'></i> <span data-i18n="ct.copy">Copy email</span>
+                    </button>
+                    <a class="contact-btn" href="file/MuhammadArshyilAzzim_CV.pdf" target="_blank" rel="noopener">
+                        <i class='bx bx-download'></i> <span data-i18n="ct.cv">Download CV</span>
+                    </a>
                 </div>
 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                <div class="contact-meta">
+                    <span><i class='bx bx-map'></i> Jakarta, Indonesia</span>
+                    <span><i class='bx bx-time-five'></i> GMT+7 (WIB)</span>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- contact section design -->
-    <section class="contact" id="contact">
-        <h2 class="heading">My <span>Contact</span></h2>
-        <p class="kontak-saya">Feel free to reach me on any platform below!</p>
-        <div class="kontakku">
-            <a href="https://www.facebook.com/profile.php?id=100091531825228" target="_blank" rel="noopener noreferrer"><i class='bx bxl-facebook'></i></a>
-            <a href="https://twitter.com/Arshyil09" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
-            <a href="https://www.instagram.com/arshyil09/?hl=id" target="_blank" rel="noopener noreferrer"><i class='bx bxl-instagram-alt'></i></a>
-            <a href="https://www.linkedin.com/in/muhammad-arshyil-azzim" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin'></i></a>
-            <a href="https://discord.gg/3tyyKyWk4a" target="_blank" rel="noopener noreferrer"><i class='bx bxl-discord'></i></a>
+            <div class="social-grid">
+                <a class="social-card" data-brand="linkedin" href="https://www.linkedin.com/in/muhammad-arshyil-azzim" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-linkedin'></i>
+                    <span class="social-text"><strong>LinkedIn</strong><small>muhammad-arshyil-azzim</small></span>
+                    <i class='bx bx-right-arrow-alt social-arrow'></i>
+                </a>
+                <a class="social-card" data-brand="github" href="https://github.com/arshyil" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-github'></i>
+                    <span class="social-text"><strong>GitHub</strong><small>@arshyil</small></span>
+                    <i class='bx bx-right-arrow-alt social-arrow'></i>
+                </a>
+                <a class="social-card" data-brand="instagram" href="https://www.instagram.com/arshyil09/" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-instagram-alt'></i>
+                    <span class="social-text"><strong>Instagram</strong><small>@arshyil09</small></span>
+                    <i class='bx bx-right-arrow-alt social-arrow'></i>
+                </a>
+                <a class="social-card" data-brand="x" href="https://twitter.com/Arshyil09" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-twitter'></i>
+                    <span class="social-text"><strong>X / Twitter</strong><small>@Arshyil09</small></span>
+                    <i class='bx bx-right-arrow-alt social-arrow'></i>
+                </a>
+                <a class="social-card" data-brand="discord" href="https://discord.gg/3tyyKyWk4a" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-discord-alt'></i>
+                    <span class="social-text"><strong>Discord</strong><small data-i18n="ct.discord">Join my community</small></span>
+                    <i class='bx bx-right-arrow-alt social-arrow'></i>
+                </a>
+                <a class="social-card" data-brand="facebook" href="https://www.facebook.com/profile.php?id=100091531825228" target="_blank" rel="noopener noreferrer">
+                    <i class='bx bxl-facebook'></i>
+                    <span class="social-text"><strong>Facebook</strong><small data-i18n="ct.fb">Say hi on Facebook</small></span>
+                    <i class='bx bx-right-arrow-alt social-arrow'></i>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- footer design -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; <span id="year">2026</span> | All Rights Reserved.</p>
+            <p>Copyright &copy; <span id="year">2026</span> | <span data-i18n="footer.rights">All Rights Reserved.</span></p>
         </div>
 
         <div class="footer-iconTop">
-            <a href="#home" aria-label="Back to top"><i class='bx bx-up-arrow-alt'></i></a>
+            <a href="#home" aria-label="Back to top" data-i18n-attr="aria-label:common.top"><i class='bx bx-up-arrow-alt'></i></a>
         </div>
     </footer>
 
@@ -398,11 +469,10 @@
     <!-- scroll reveal -->
     <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" integrity="sha384-/Mm/FNRz5xZHO/GuuAUw93l4PLUyI1RfkXnlY65kdR+jBmgt/ih19KrCNqVI9gKS" crossorigin="anonymous"></script>
 
-    <!-- swiper js -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9.4.1/swiper-bundle.min.js" integrity="sha384-hPkhOzAEx2ZcJuDkANAhjXmtEnqjkADleTxUbwTTJLmwmhV2F4/u6BOcnVL3xxqs" crossorigin="anonymous"></script>
 
     <!-- custom js -->
     <script src="js/projects.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/common.js"></script>
     <script src="js/projects-ui.js"></script>
     <script src="js/script.js"></script>

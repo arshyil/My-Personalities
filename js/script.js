@@ -30,21 +30,32 @@ window.onscroll = () => {
 };
 
 
-/*========== swiper ==========*/
-const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 50,
-    loop: true,
-    grabCursor: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-});
+/*========== copy email ==========*/
+const copyBtn = document.querySelector('#copy-email');
+
+if (copyBtn) {
+    const label = copyBtn.querySelector('span');
+    copyBtn.addEventListener('click', async () => {
+        const email = copyBtn.dataset.email;
+        try {
+            await navigator.clipboard.writeText(email);
+        } catch (e) {
+            // older browsers: fall back to a hidden text field
+            const tmp = document.createElement('textarea');
+            tmp.value = email;
+            document.body.appendChild(tmp);
+            tmp.select();
+            document.execCommand('copy');
+            tmp.remove();
+        }
+        label.textContent = t('contact.copied');
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+            label.textContent = t('contact.copy');
+            copyBtn.classList.remove('copied');
+        }, 2000);
+    });
+}
 
 
 /*========== experience tabs ==========*/
@@ -74,6 +85,6 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
-ScrollReveal().reveal('.home-img img, .services-container, .project-grid, .testimonial-wrapper, .kontakku', { origin: 'bottom' });
+ScrollReveal().reveal('.home-img img, .services-container, .project-grid, .motto-card, .principle-grid, .contact-wrap', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img img', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content', { origin: 'right' });

@@ -2,23 +2,23 @@
  * Project cards + popup, shared by:
  *  - index.html    -> highlights (featured first, max N cards)
  *  - projects.html -> all projects with search, filters, sort and "load more"
- * Data comes from js/projects.js (PROJECTS).
+ * Data comes from js/projects.js (PROJECTS), text from js/i18n.js (t()).
  */
 
-const CATEGORY_LABELS = {
-    web: { label: 'Web Dev', icon: 'bx-code-alt' },
-    uiux: { label: 'UI/UX', icon: 'bxl-figma' },
-    design: { label: 'Graphic Design', icon: 'bx-palette' },
-    video: { label: 'Video', icon: 'bx-video-recording' }
+const CATEGORY_ICONS = {
+    web: 'bx-code-alt',
+    uiux: 'bxl-figma',
+    design: 'bx-palette',
+    video: 'bx-video-recording'
 };
 
-const LINK_TYPES = {
-    live: { label: 'Live Demo', icon: 'bx-link-external' },
-    code: { label: 'Code', icon: 'bxl-github' },
-    figma: { label: 'Figma', icon: 'bxl-figma' },
-    drive: { label: 'View Collection', icon: 'bxl-google' },
-    video: { label: 'Watch Demo', icon: 'bxl-youtube' },
-    file: { label: 'Open', icon: 'bx-file' }
+const LINK_ICONS = {
+    live: 'bx-link-external',
+    code: 'bxl-github',
+    figma: 'bxl-figma',
+    drive: 'bxl-google',
+    video: 'bxl-youtube',
+    file: 'bx-file'
 };
 
 /* ---------- helpers ---------- */
@@ -36,7 +36,14 @@ function safeUrl(url) {
 }
 
 function catInfo(key) {
-    return CATEGORY_LABELS[key] || { label: key, icon: 'bx-folder' };
+    if (!CATEGORY_ICONS[key]) return { label: key, icon: 'bx-folder' };
+    return { label: t('cat.' + key), icon: CATEGORY_ICONS[key] };
+}
+
+// project text in the current language (falls back to English)
+function loc(p, field) {
+    const tr = getLang() === 'id' && p.id && p.id[field];
+    return tr && tr.length ? tr : p[field];
 }
 
 // featured first, then the order in projects.js
@@ -48,27 +55,27 @@ function thumbHtml(p) {
     const badges = `<div class="project-badges">
             <span>${escapeHtml(catInfo(p.category).label)}</span>
             <span class="badge-right">
-                ${p.private ? '<span class="private"><i class="bx bxs-lock-alt"></i> Private</span>' : ''}
-                ${p.featured ? '<span class="featured"><i class="bx bxs-star"></i> Featured</span>' : ''}
+                ${p.private ? `<span class="private"><i class="bx bxs-lock-alt"></i> ${t('badge.private')}</span>` : ''}
+                ${p.featured ? `<span class="featured"><i class="bx bxs-star"></i> ${t('badge.featured')}</span>` : ''}
             </span>
         </div>`;
 
     if (p.image) {
         return `<div class="project-thumb">${badges}
-            <img src="${safeUrl(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy"></div>`;
+            <img src="${safeUrl(p.image)}" alt="${escapeHtml(loc(p, 'title'))}" loading="lazy"></div>`;
     }
     return `<div class="project-thumb no-img">${badges}
-        <i class="bx ${escapeHtml(p.icon || 'bx-code-alt')}"></i><strong>${escapeHtml(p.title)}</strong></div>`;
+        <i class="bx ${escapeHtml(p.icon || 'bx-code-alt')}"></i><strong>${escapeHtml(loc(p, 'title'))}</strong></div>`;
 }
 
 function linksHtml(p) {
     const privateNote = p.private
-        ? '<span class="private-note"><i class="bx bxs-lock-alt"></i> Private code</span>'
+        ? `<span class="private-note"><i class="bx bxs-lock-alt"></i> ${t('badge.privateCode')}</span>`
         : '';
     return privateNote + (p.links || []).map((l, i) => {
-        const t = LINK_TYPES[l.type] || LINK_TYPES.file;
+        const type = LINK_ICONS[l.type] ? l.type : 'file';
         return `<a href="${safeUrl(l.url)}" target="_blank" rel="noopener noreferrer" class="${i === 0 ? 'primary' : ''}">
-            <i class="bx ${t.icon}"></i>${escapeHtml(l.label || t.label)}</a>`;
+            <i class="bx ${LINK_ICONS[type]}"></i>${escapeHtml(l.label || t('link.' + type))}</a>`;
     }).join('');
 }
 
@@ -81,8 +88,8 @@ function cardHtml(p, i) {
         <article class="project-card" tabindex="0" data-index="${p._i}" style="animation-delay:${(i % 9) * 60}ms">
             ${thumbHtml(p)}
             <div class="project-body">
-                <h3>${escapeHtml(p.title)}</h3>
-                <p>${escapeHtml(p.summary)}</p>
+                <h3>${escapeHtml(loc(p, 'title'))}</h3>
+                <p>${escapeHtml(loc(p, 'summary'))}</p>
                 <div class="exp-tags">${tagsHtml(p)}</div>
                 <div class="project-links">${linksHtml(p)}</div>
             </div>
@@ -91,17 +98,20 @@ function cardHtml(p, i) {
 
 /* ---------- popup ---------- */
 const projectModal = document.querySelector('#project-modal');
+let openedProject = null;
 
 function openProject(p) {
+    openedProject = p;
     projectModal.querySelector('#pm-media').innerHTML = thumbHtml(p);
     projectModal.querySelector('#pm-category').textContent = catInfo(p.category).label;
-    projectModal.querySelector('#pm-title').textContent = p.title;
-    projectModal.querySelector('#pm-summary').textContent = p.summary;
+    projectModal.querySelector('#pm-title').textContent = loc(p, 'title');
+    projectModal.querySelector('#pm-summary').textContent = loc(p, 'summary');
     projectModal.querySelector('#pm-details').innerHTML =
-        (p.details || []).map(d => `<li>${escapeHtml(d)}</li>`).join('');
+        (loc(p, 'details') || []).map(d => `<li>${escapeHtml(d)}</li>`).join('');
     projectModal.querySelector('#pm-tags').innerHTML = tagsHtml(p);
     projectModal.querySelector('#pm-links').innerHTML = linksHtml(p);
 
+    if (projectModal.classList.contains('open')) return; // only re-rendered (language change)
     projectModal.classList.add('open');
     projectModal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
@@ -109,6 +119,7 @@ function openProject(p) {
 }
 
 function closeProject() {
+    openedProject = null;
     projectModal.classList.remove('open');
     projectModal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
@@ -138,6 +149,10 @@ if (projectModal) {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && projectModal.classList.contains('open')) closeProject();
     });
+    // language switched while the popup is open
+    document.addEventListener('langchange', () => {
+        if (openedProject) openProject(openedProject);
+    });
 }
 
 /* ---------- index.html: highlights ---------- */
@@ -145,7 +160,11 @@ const highlightGrid = document.querySelector('#project-grid');
 
 if (highlightGrid) {
     const limit = parseInt(highlightGrid.dataset.limit, 10) || 6;
-    highlightGrid.innerHTML = ALL_PROJECTS.slice(0, limit).map(cardHtml).join('');
+    const renderHighlights = () => {
+        highlightGrid.innerHTML = ALL_PROJECTS.slice(0, limit).map(cardHtml).join('');
+    };
+    renderHighlights();
+    document.addEventListener('langchange', renderHighlights);
     bindCards(highlightGrid);
 
     const countEl = document.querySelector('#see-all-count');
@@ -187,16 +206,24 @@ if (browseGrid) {
     const techList = Object.keys(techCount).sort((a, b) => techCount[b] - techCount[a] || a.localeCompare(b));
     const TECH_PREVIEW = 10;
 
+    // search in both languages, so "poster" and "desain" both work
+    function searchText(p) {
+        const id = p.id || {};
+        return [p.title, p.summary, ...(p.tags || []), ...(p.details || []),
+            id.title, id.summary, ...(id.details || []), catInfo(p.category).label]
+            .filter(Boolean).join(' ').toLowerCase();
+    }
+
     function filtered() {
         const q = state.q.trim().toLowerCase();
         let list = ALL_PROJECTS.filter(p =>
             (state.category === 'all' || p.category === state.category) &&
             (!state.tech || (p.tags || []).includes(state.tech)) &&
-            (!q || [p.title, p.summary, ...(p.tags || []), ...(p.details || [])]
-                .join(' ').toLowerCase().includes(q))
+            (!q || searchText(p).includes(q))
         );
-        if (state.sort === 'az') list = [...list].sort((a, b) => a.title.localeCompare(b.title));
-        if (state.sort === 'za') list = [...list].sort((a, b) => b.title.localeCompare(a.title));
+        const byTitle = (a, b) => loc(a, 'title').localeCompare(loc(b, 'title'));
+        if (state.sort === 'az') list = [...list].sort(byTitle);
+        if (state.sort === 'za') list = [...list].sort((a, b) => byTitle(b, a));
         return list;
     }
 
@@ -212,7 +239,7 @@ if (browseGrid) {
 
     function renderCats() {
         const used = [...new Set(PROJECTS.map(p => p.category))];
-        const buttons = [{ key: 'all', label: 'All', icon: 'bx-grid-alt', count: PROJECTS.length }]
+        const buttons = [{ key: 'all', label: t('pp.all'), icon: 'bx-grid-alt', count: PROJECTS.length }]
             .concat(used.map(key => ({
                 key, label: catInfo(key).label, icon: catInfo(key).icon,
                 count: PROJECTS.filter(p => p.category === key).length
@@ -232,15 +259,15 @@ if (browseGrid) {
                 ${escapeHtml(t)} <small>${techCount[t] || 0}</small>
             </button>`).join('');
         els.techMore.hidden = techList.length <= TECH_PREVIEW;
-        els.techMore.textContent = state.allTechs ? 'Show less' : `+${techList.length - TECH_PREVIEW} more`;
+        els.techMore.textContent = state.allTechs ? t('pp.showLess') : t('pp.more', { n: techList.length - TECH_PREVIEW });
     }
 
     function render() {
         const list = filtered();
         browseGrid.innerHTML = list.slice(0, state.shown).map(cardHtml).join('');
-        els.count.textContent = `${list.length} project${list.length === 1 ? '' : 's'}`;
+        els.count.textContent = t(list.length === 1 ? 'pp.count1' : 'pp.countN', { n: list.length });
         els.more.hidden = list.length <= state.shown;
-        els.more.textContent = `Load more (${list.length - state.shown} left)`;
+        els.more.textContent = t('pp.loadMore', { n: list.length - state.shown });
         els.empty.hidden = list.length > 0;
         els.clear.hidden = !state.q;
         syncUrl();
@@ -288,6 +315,12 @@ if (browseGrid) {
         els.sort.value = 'featured';
         update({ q: '', category: 'all', tech: '', sort: 'featured' });
     }));
+
+    document.addEventListener('langchange', () => {
+        renderCats();
+        renderTechs();
+        render();
+    });
 
     bindCards(browseGrid);
     update({});
