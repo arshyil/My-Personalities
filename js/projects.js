@@ -66,27 +66,31 @@ const PROJECTS = [
         ]
     },
     {
-        title: 'HypeStep',
+        title: 'EMS Mercy Roleplay',
         category: 'web',
-        image: 'images/project-hype.jpg',
-        icon: 'bx-shopping-bag',
-        summary: 'Online store website for premium sneakers & streetwear, with home, shop, cart and contact pages.',
+        private: true,
+        image: 'images/project-ems.jpg',
+        icon: 'bx-plus-medical',
+        summary: 'Online registration counter and internal system for the EMS (medical) division of Mercy Roleplay.',
         details: [
-            'Static front-end version is live on GitHub Pages.',
-            'A separate Laravel version is also available.'
+            'Public counter for patient cards, health certificates, surgery registration, medicine and BPJS cards.',
+            'On-duty board and shift attendance with check-in / check-out.',
+            'Staff ranks, handbook, and role-based access for EMS members and admins.',
+            'Admin tools for user management and weekly attendance recaps.'
         ],
         // versi Bahasa Indonesia
         id: {
-            summary: 'Website toko online untuk sneakers & streetwear premium, dengan halaman beranda, toko, keranjang, dan kontak.',
+            summary: 'Loket pendaftaran online dan sistem internal untuk divisi EMS (medis) Mercy Roleplay.',
             details: [
-                'Versi front-end statis sudah live di GitHub Pages.',
-                'Ada juga versi terpisah yang dibuat dengan Laravel.'
+                'Loket publik untuk kartu pasien, surat keterangan sehat, pendaftaran operasi, obat, dan kartu BPJS.',
+                'Papan on-duty dan absensi shift dengan check-in / check-out.',
+                'Pangkat staff, buku panduan, dan akses berdasarkan peran untuk anggota EMS dan admin.',
+                'Fitur admin untuk mengelola pengguna dan rekap absensi mingguan.'
             ]
         },
-        tags: ['HTML', 'CSS', 'JavaScript', 'Laravel'],
+        tags: ['Laravel', 'Inertia.js', 'React', 'Tailwind CSS'],
         links: [
-            { type: 'live', url: 'https://arshyil.github.io/HypeStep/' },
-            { type: 'code', url: 'https://github.com/arshyil/HypeStep' }
+            { type: 'live', url: 'https://emsmercy.mercyroleplay.id/' }
         ]
     },
     {
@@ -173,31 +177,27 @@ const PROJECTS = [
         ]
     },
     {
-        title: 'EMS Mercy Roleplay',
+        title: 'HypeStep',
         category: 'web',
-        private: true,
-        image: 'images/project-ems.jpg',
-        icon: 'bx-plus-medical',
-        summary: 'Online registration counter and internal system for the EMS (medical) division of Mercy Roleplay.',
+        image: 'images/project-hype.jpg',
+        icon: 'bx-shopping-bag',
+        summary: 'Online store website for premium sneakers & streetwear, with home, shop, cart and contact pages.',
         details: [
-            'Public counter for patient cards, health certificates, surgery registration, medicine and BPJS cards.',
-            'On-duty board and shift attendance with check-in / check-out.',
-            'Staff ranks, handbook, and role-based access for EMS members and admins.',
-            'Admin tools for user management and weekly attendance recaps.'
+            'Static front-end version is live on GitHub Pages.',
+            'A separate Laravel version is also available.'
         ],
         // versi Bahasa Indonesia
         id: {
-            summary: 'Loket pendaftaran online dan sistem internal untuk divisi EMS (medis) Mercy Roleplay.',
+            summary: 'Website toko online untuk sneakers & streetwear premium, dengan halaman beranda, toko, keranjang, dan kontak.',
             details: [
-                'Loket publik untuk kartu pasien, surat keterangan sehat, pendaftaran operasi, obat, dan kartu BPJS.',
-                'Papan on-duty dan absensi shift dengan check-in / check-out.',
-                'Pangkat staff, buku panduan, dan akses berdasarkan peran untuk anggota EMS dan admin.',
-                'Fitur admin untuk mengelola pengguna dan rekap absensi mingguan.'
+                'Versi front-end statis sudah live di GitHub Pages.',
+                'Ada juga versi terpisah yang dibuat dengan Laravel.'
             ]
         },
-        tags: ['Laravel', 'Inertia.js', 'React', 'Tailwind CSS'],
+        tags: ['HTML', 'CSS', 'JavaScript', 'Laravel'],
         links: [
-            { type: 'live', url: 'https://emsmercy.mercyroleplay.id/' }
+            { type: 'live', url: 'https://arshyil.github.io/HypeStep/' },
+            { type: 'code', url: 'https://github.com/arshyil/HypeStep' }
         ]
     },
     {
