@@ -86,6 +86,19 @@ body {
     color: var(--text-color);
 }
 
+/* desktop: keep the whole nav inside the purple triangle
+   (tighter links + less right padding on the header) */
+@media (min-width: 992px) {
+    .header {
+        padding-right: 5%;
+    }
+
+    .navbar a {
+        font-size: 1.6rem;
+        margin-right: 1.6rem;
+    }
+}
+
 .header.sticky .navbar a.active {
     color: var(--main-color);
 }
